@@ -12,4 +12,5 @@ The main function of the project is to make the user enter the card information 
 * `JavaScript:` Dynamicity of the page and mask for data entry
 
 # 📁 Project access
-You can [access the source code](https://github.com/ArturColen/RocketPay) or [view the hosted page]([https://arturcolen.github.io/RocketPay](https://rocketpay-smoky.vercel.app).
+You can [access the source code](https://github.com/ArturColen/RocketPay) or [view the hosted page](https://rocketpay-smoky.vercel.app).
+
