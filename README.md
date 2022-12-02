@@ -13,4 +13,3 @@ The main function of the project is to make the user enter the card information 
 
 # 📁 Project access
 You can [access the source code](https://github.com/ArturColen/RocketPay) or [view the hosted page](https://rocketpay-smoky.vercel.app).
-
