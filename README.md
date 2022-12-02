@@ -1,4 +1,4 @@
-# Creation of RocketPay
+# Creation of the RocketPay
 Project developed through the Explorer Lab, an event promoted by [Rocketseat](https://www.rocketseat.com.br/) with the objective of improving JavaScript knowledge. For this, a credit card generator was created.
 
 ![RocketPay image](https://user-images.githubusercontent.com/96635074/196974349-1f579c57-7789-4409-a135-1e31bb68363b.png)
