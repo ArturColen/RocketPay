@@ -8,7 +8,7 @@ const ccBgColor01 = document.querySelector(".cc-bg svg > g g:nth-child(1) path")
 const ccBgColor02 = document.querySelector(".cc-bg svg > g g:nth-child(2) path");
 const ccLogo = document.querySelector(".cc-logo span:nth-child(2) img");
 
-// Function to change the color and logo of the card according to the flag
+// Change the color and logo of the card according to the flag
 function setCardType(type) {
     const colors = {
         visa: ["#436d99", "#2d57f2"],
@@ -86,6 +86,7 @@ addButton.addEventListener("click", () => {
     alert("Cartão adicionado!");
 });
 
+// Prevent form submission
 document.querySelector("form").addEventListener("submit", (event) => {
     event.preventDefault();
 })
@@ -97,14 +98,14 @@ cardHolder.addEventListener("input", () => {
     ccHolder.innerText = cardHolder.value.length === 0 ? "NOME COMPLETO" : cardHolder.value;
 })
 
-// Obtain and display the card's security code
+// Get and display the card's security code
 securityCodeMasked.on("accept", () => {
     updateSecurityCode(securityCodeMasked.value)
 })
 
 function updateSecurityCode(code) {
     const ccSecurity = document.querySelector(".cc-security .value");
-    ccSecurity.innerText = code.length === 0 ? "000" : code
+    ccSecurity.innerText = code.length === 0 ? "000" : code;
 }
 
 // Get and display the card number
@@ -116,7 +117,7 @@ cardNumberMasked.on("accept", () => {
 
 function updateCardNumber(number) {
     const ccNumber = document.querySelector(".cc-number");
-    ccNumber.innerText = number.length === 0 ? "0000 0000 0000 0000" : number
+    ccNumber.innerText = number.length === 0 ? "0000 0000 0000 0000" : number;
 }
 
 // Get and display the card expiration date
@@ -126,5 +127,5 @@ expirationDateMasked.on("accept", () => {
 
 function updateExpirationDate(date) {
     const ccExpiration = document.querySelector(".cc-extra .value");
-    ccExpiration.innerText = date.length === 0 ? "00/00" : date
+    ccExpiration.innerText = date.length === 0 ? "00/00" : date;
 }
