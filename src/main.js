@@ -1,6 +1,4 @@
-// Import CSS File
 import "./css/index.css";
-// Import the IMask library
 import IMask from "imask";
 
 // Call up the elements to be changed
