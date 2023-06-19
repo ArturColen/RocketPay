@@ -1,12 +1,10 @@
 import "./css/index.css";
 import IMask from "imask";
 
-// Call up the elements to be changed
 const ccBgColor01 = document.querySelector(".cc-bg svg > g g:nth-child(1) path");
 const ccBgColor02 = document.querySelector(".cc-bg svg > g g:nth-child(2) path");
 const ccLogo = document.querySelector(".cc-logo span:nth-child(2) img");
 
-// Change the color and logo of the card according to the flag
 function setCardType(type) {
     const colors = {
         visa: ["#436d99", "#2d57f2"],
@@ -19,17 +17,14 @@ function setCardType(type) {
     ccLogo.setAttribute("src", `cc-${type}.svg`);
 }
 
-// Make the function global
 globalThis.setCardType = setCardType;
 
-// Create mask for the security code field
 const securityCode = document.querySelector("#security-code");
 const securityCodePattern = {
     mask: "000",
 };
 const securityCodeMasked = IMask(securityCode, securityCodePattern);
 
-// Create mask for the card expiration date field
 const expirationDate = document.querySelector("#expiration-date");
 const expirationDatePattern = {
     mask: "MM{/}YY",
@@ -48,7 +43,6 @@ const expirationDatePattern = {
 };
 const expirationDateMasked = IMask(expirationDate, expirationDatePattern);
 
-// Create mask for card number field
 const cardNumber = document.querySelector("#card-number");
 const cardNumberPattern = {
     mask: [
@@ -78,25 +72,21 @@ const cardNumberPattern = {
 };
 const cardNumberMasked = IMask(cardNumber, cardNumberPattern);
 
-// Event by clicking the button
 const addButton = document.querySelector("#add-card");
 addButton.addEventListener("click", () => {
     alert("Cartão adicionado!");
 });
 
-// Prevent form submission
 document.querySelector("form").addEventListener("submit", (event) => {
     event.preventDefault();
 })
 
-// Get and display the cardholder name 
 const cardHolder = document.querySelector("#card-holder");
 cardHolder.addEventListener("input", () => {
     const ccHolder = document.querySelector(".cc-holder .value");
     ccHolder.innerText = cardHolder.value.length === 0 ? "NOME COMPLETO" : cardHolder.value;
 })
 
-// Get and display the card's security code
 securityCodeMasked.on("accept", () => {
     updateSecurityCode(securityCodeMasked.value)
 })
@@ -106,7 +96,6 @@ function updateSecurityCode(code) {
     ccSecurity.innerText = code.length === 0 ? "000" : code;
 }
 
-// Get and display the card number
 cardNumberMasked.on("accept", () => {
     const cardType = cardNumberMasked.masked.currentMask.cardtype;
     setCardType(cardType);
@@ -118,7 +107,6 @@ function updateCardNumber(number) {
     ccNumber.innerText = number.length === 0 ? "0000 0000 0000 0000" : number;
 }
 
-// Get and display the card expiration date
 expirationDateMasked.on("accept", () => {
     updateExpirationDate(expirationDateMasked.value);
 })
